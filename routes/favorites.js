@@ -7,7 +7,7 @@ router.use(express.json());
 router
   .get('/', (req, res) => { // 즐겨찾기 조회
     const { memberId } = req.body;
-    const query = `select n.title, n.description, n.tag, n.createdAt, n.updatedAt
+    const query = `select n.title, n.description, n.tag, n.created_at, n.updated_at
                   from favorite f
                   join note n on n.id = f.note_id
                   where f.member_id = '${memberId}'`;
@@ -34,7 +34,7 @@ router
   })
   .post('/add/:id', (req, res) => { // 즐겨찾기 추가
     const { memberId } = req.body;
-    const noteId = parseInt(req.param.id);
+    const noteId = parseInt(req.params.id);
     const query = `insert into favorite (member_id, note_id) values ('${memberId}', ${noteId})`;
     
     if (!memberId) {
