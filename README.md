@@ -55,7 +55,7 @@ create table note (
 
 create table favorite (
   id int primary key auto_increment,
-  member_id int,
+  member_id varchar(20),
   note_id int,
   foreign key (member_id) references member(id)
     on delete cascade
