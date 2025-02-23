@@ -14,7 +14,7 @@ router
       })
     }
 
-    const insertQuery = `insert into member (loginId, password, name) values ('${id}', '${password}', '${name}')`;
+    const insertQuery = `insert into member (id, password, name) values ('${id}', '${password}', '${name}')`;
 
     db.query(insertQuery, (err, results) => {
       if (err) {
