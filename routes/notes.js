@@ -32,8 +32,7 @@ router
   })
   .post((req, res) => { // 노트 생성
     const { memberId } = req.body;
-    const { title, description, tag } = req.body;
-    const query = `insert into note (member_id, title, description, tag) values ('${memberId}', '${title}', '${description}', '${tag}')`;
+    const { title } = req.body;
 
     if (!memberId) {
       return res.status(401).json({
@@ -46,6 +45,11 @@ router
         message: '제목은 필수값입니다.'
       });
     }
+
+    const description = req.body.description || '';
+    const tag = req.body.tag || '';
+
+    const query = `insert into note (member_id, title, description, tag) values ('${memberId}', '${title}', '${description}', '${tag}')`;
 
     db.query(query, (err, results) => {
       if (err) {
