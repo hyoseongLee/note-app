@@ -1,5 +1,37 @@
-# memo-app
+# 📝Note App
 
+사이드 프로젝트로 간단하게 만들어보는 노트 관리 API
+
+## 📌 기능
+
+### 1. 회원 관리 (Members)
+
+- 회원가입 (`POST` /join)
+
+### 2. 노트 관리 (Notes)
+
+- 노트 생성 (`POST` /notes)
+- 노트 전체 조회 (`GET` /notes)
+- 전체 노트 삭제 (`DELETE` /notes)
+
+- 노트 개별 조회 (`GET` /notes/:id)
+- 노트 수정 (`PUT` /notes/:id)
+- 노트 삭제 (`DELETE` /notes/:id)
+
+### 3. 즐겨찾기 관리 (Favorites)
+
+- 즐겨찾기 목록 조회 (`GET` /favorites)
+- 즐겨찾기 추가 (`POST` /favorites/add/:id)
+- 즐겨찾기 삭제 (`DELETE` /favorites/delete/:id)
+
+***추후 계속 추가 및 수정 예정***
+
+## 🛠️ 기술 스택
+
+- **Backend**: Node.js (Express)
+- **Database**: MariaDB
+
+## ⚡ DB 테이블 설정
 ``` sql
 -- 기본 테이블
 create table member (
