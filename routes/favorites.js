@@ -67,7 +67,7 @@ router
   })
   .delete('/delete/:id', (req, res) => { // 즐겨찾기 삭제
     const { memberId } = req.body;
-    const noteId = parseInt(req.query.id);
+    const noteId = parseInt(req.params.id);
     const query = `delete from favorite where member_id = '${memberId}' and note_id = ${noteId}`;
     
     if (!memberId) {
