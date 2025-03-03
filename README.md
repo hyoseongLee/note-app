@@ -36,8 +36,8 @@
 -- 기본 테이블
 create table member (
   id varchar(20) primary key,
-  password varchar(20) not null,
-  name varchar(100) not null
+  password varchar(30) not null,
+  name varchar(30) not null
 );
 
 create table note (
