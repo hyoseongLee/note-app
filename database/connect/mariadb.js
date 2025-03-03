@@ -1,11 +1,15 @@
 const mariadb = require('mysql');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const password = process.env.DB_PASSWORD;
 
 const db = mariadb.createConnection(
   {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'root',
+    password,
     database: 'NoteApp'
   }
 );
